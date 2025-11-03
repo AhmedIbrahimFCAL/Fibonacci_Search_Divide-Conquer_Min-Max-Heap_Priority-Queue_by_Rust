@@ -300,19 +300,7 @@ impl<T:PartialOrd + Display + Copy + Clone + Debug> Display for Heap<T>{
                         Shown::Leaf(value) => {
                             write!(f,"{formated}{: ^spaces$}{reset}",value)?},
                     }
-                    /* match show[i][j]{
-                        Shown::Dash  => write!(f,"{:_>spaces$}", '_')?,
-                        Shown::Empty => write!(f,"{: >spaces$}", ' ')?,
-                        Shown::Slash => write!(f,"{: >spaces$}", "/")?,
-                        Shown::BackSlash => write!(f,"{: <spaces$}", "\\")?,
-                        Shown::Value(value)=> {
-                            write!(f,"{formated}{:_^spaces$}{reset}",value)?
-                        },
-                        Shown::Leaf(value) => {
-                            write!(f,"{formated}{: ^spaces$}{reset}",value)?},
-                    } */  
                 }
-                
                 write!(f,"\n")?;
             }
             Ok(())
@@ -423,4 +411,5 @@ pub fn test_heap(){
     println!("The priority queue size: {}",priority_queue.size());
     priority_queue.clear();
     println!("The priority queue after clear: {}",priority_queue);
+
 }
